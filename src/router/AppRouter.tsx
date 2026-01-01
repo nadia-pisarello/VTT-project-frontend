@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import VTT from "../pages/VTT";
+import VTT from "../vtt/VTT";
 import Login from "../pages/Login";
 import Partidas from "../pages/Partidas";
 
