@@ -15,3 +15,12 @@ export interface UsuarioResponseDTO {
     nombre: string;
     email: string;
 }
+
+export interface LoginDTO {
+    email: string;
+    password: string;
+}
+
+export interface LoginResponseDTO {
+    access_token: string;
+}
