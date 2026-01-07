@@ -4,29 +4,31 @@ import { api } from './axios.instance';
 export const UsuarioService = {
     create: async (data: CreateUsuarioDTO): Promise<UsuarioResponseDTO> => {
 
-        const response = await api.post<UsuarioResponseDTO>(
-            '/usuarios',
-            data)
-            .then(r => r.data);
-        return response;
+        const response = await api.post<UsuarioResponseDTO>('/usuario/crear', data);
+        return response.data;
     },
 
-    update: async (id: string, data: UpdateUsuarioDTO): Promise<UsuarioResponseDTO> => {
-        const response = await api.patch<UsuarioResponseDTO>(`/usuarios/${id}`, data).then(r => r.data);
-        return response;
+    update: async (data: UpdateUsuarioDTO): Promise<UsuarioResponseDTO> => {
+        const response = await api.patch<UsuarioResponseDTO>(`/usuario/editar-perfil`, data);
+        return response.data;
     },
 
-    delete: async (id: string): Promise<void> => {
-        await api.delete<void>(`/usuarios/${id}`);
+    delete: async (): Promise<void> => {
+        await api.delete<void>(`/usuario/eliminar-cuenta`);
     },
 
-    getById: async (id: string): Promise<UsuarioResponseDTO> => {
-        const response = await api.get<UsuarioResponseDTO>(`/usuarios/${id}`).then(r => r.data);
-        return response;
+    getMiPerfil: async (): Promise<UsuarioResponseDTO> => {
+        const response = await api.get<UsuarioResponseDTO>('/usuario/mi-perfil');
+        return response.data;
+    },
+
+    getByEmail: async (email: string): Promise<UsuarioResponseDTO> => {
+        const response = await api.get<UsuarioResponseDTO>(`/usuario/email/${email}`);
+        return response.data;
     },
 
     getAll: async (): Promise<UsuarioResponseDTO[]> => {
-        const response = await api.get<UsuarioResponseDTO[]>('/usuarios').then(r => r.data);
-        return response;
+        const response = await api.get<UsuarioResponseDTO[]>('/usuario');
+        return response.data;
     }
 };
