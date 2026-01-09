@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { UsuarioService } from "../api/user.service";
+import { UsuarioService } from "../services/user.service";
 import type { CreateUsuarioDTO, UsuarioResponseDTO } from "../dtos/usuario.dto";
 
 export const useUsuarios = () => {
