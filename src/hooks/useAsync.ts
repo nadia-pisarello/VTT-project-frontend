@@ -16,7 +16,6 @@ export const useAsync = <T>(
             return response;
         } catch (err) {
             setError(err as Error);
-            setData(null);
             throw err;
         } finally {
             setLoading(false);
