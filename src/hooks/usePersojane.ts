@@ -7,13 +7,13 @@ export const usePersonaje = (partidaId: number) => {
         data: personaje,
         loading,
         error,
-        execute: loadPersonajes,
-    } = useAsync(() => PersonajeService.getPersonajeDePartida(partidaId), false);
+        execute: loadingPersonajes,
+    } = useAsync(() => PersonajeService.getPersonajeDePartida(partidaId));
 
     return {
-        personaje: personaje?.[0] ?? null,
+        personaje: personaje ?? [],
         loading,
         error,
-        reaload: loadPersonajes,
+        reaload: loadingPersonajes,
     };
 }

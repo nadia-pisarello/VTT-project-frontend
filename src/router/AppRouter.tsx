@@ -10,8 +10,7 @@ export default function AppRouter() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/partidas" element={<Partidas />} />
-      <Route path="/vtt" element={<VTT />} />
-      {/* <Route path="/partidas/:id/vtt" element={<VTT />} /> */}
+      <Route path="/partidas/:id/vtt" element={<VTT />} />
     </Routes>
   );
 }
