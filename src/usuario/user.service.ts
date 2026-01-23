@@ -1,5 +1,5 @@
 import type { CreateUsuarioDTO, UsuarioResponseDTO, UpdateUsuarioDTO } from './usuario.dto';
-import { api } from './httpClient';
+import { api } from '../services/httpClient';
 
 export const UsuarioService = {
     create: async (data: CreateUsuarioDTO): Promise<UsuarioResponseDTO> => {
