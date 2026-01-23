@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { UsuarioResponseDTO, LoginDTO } from "../dtos/usuario.dto";
+import type { UsuarioResponseDTO, LoginDTO } from "../usuario/usuario.dto";
 
 export interface AuthContextType {
     usuario: UsuarioResponseDTO | null;

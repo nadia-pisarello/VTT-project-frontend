@@ -1,4 +1,4 @@
-import type { CreateUsuarioDTO, UsuarioResponseDTO, UpdateUsuarioDTO } from '../dtos/usuario.dto';
+import type { CreateUsuarioDTO, UsuarioResponseDTO, UpdateUsuarioDTO } from './usuario.dto';
 import { api } from './httpClient';
 
 export const UsuarioService = {

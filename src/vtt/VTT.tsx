@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { usePixiApp } from "./hooks/usePixiApp";
 import { useGridAndCamera } from "./hooks/useGridAndCamera";
 import { useParams } from "react-router-dom";
-import { usePersonaje } from "../hooks/usePersojane";
+import { usePersonaje } from "../personaje/usePersojane";
 
 export default function VTT() {
   const { id } = useParams<{ id: string }>();

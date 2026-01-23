@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AuthService } from "./auth.service";
-import type { LoginDTO, UsuarioResponseDTO } from "../dtos/usuario.dto";
+import type { LoginDTO, UsuarioResponseDTO } from "../usuario/usuario.dto";
 import { AuthContext } from "./authContext";
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {

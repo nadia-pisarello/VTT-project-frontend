@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { UsuarioService } from "../services/user.service";
-import type { CreateUsuarioDTO, UsuarioResponseDTO } from "../dtos/usuario.dto";
+import type { CreateUsuarioDTO, UsuarioResponseDTO } from "./usuario.dto";
 
 export const useUsuarios = () => {
     const [usuarios, setUsuarios] = useState<UsuarioResponseDTO[]>([]);
