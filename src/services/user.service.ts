@@ -1,5 +1,5 @@
 import type { CreateUsuarioDTO, UsuarioResponseDTO, UpdateUsuarioDTO } from '../dtos/usuario.dto';
-import { api } from './axios.instance';
+import { api } from './httpClient';
 
 export const UsuarioService = {
     create: async (data: CreateUsuarioDTO): Promise<UsuarioResponseDTO> => {

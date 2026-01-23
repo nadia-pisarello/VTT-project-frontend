@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AuthService } from "../services/auth.service"
+import { AuthService } from "./auth.service"
 import type { LoginDTO, UsuarioResponseDTO } from "../dtos/usuario.dto"
 
 export const useAuth = () => {

@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [isLoggedIn] = useState(false);
   return (
     <main>
-      <h1>Moleman</h1>
-      <Link to="/login">Login</Link>
-      <br />
-      <Link to="/partidas">Partidas</Link>
+      {isLoggedIn ? (
+        <Link to="/perfil">Ir a Perfil</Link>
+      ) : (
+        <Link to="/login">Iniciar Sesión</Link>
+      )}
     </main>
   );
 }

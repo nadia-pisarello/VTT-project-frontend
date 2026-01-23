@@ -1,5 +1,5 @@
 import type { LoginDTO, LoginResponseDTO, UsuarioResponseDTO } from "../dtos/usuario.dto";
-import { api } from "./axios.instance";
+import { api } from "../services/httpClient";
 
 
 export const AuthService = {

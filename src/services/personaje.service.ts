@@ -1,5 +1,5 @@
 import type { CreatePersonajeDTO, Personaje } from "../dtos/personaje.dto";
-import { api } from "./axios.instance";
+import { api } from "./httpClient";
 
 export const PersonajeService = {
     async createPersonaje(dto: CreatePersonajeDTO, partidaId: number): Promise<Personaje> {
