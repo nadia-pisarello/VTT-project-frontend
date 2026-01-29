@@ -1,5 +1,6 @@
-import { UsuarioService } from "../usuario/user.service";
-import type { UpdateUsuarioDTO } from "../usuario/usuario.dto.ts";
+
+import { UsuarioService } from "../features/usuario/user.service.ts";
+import type { UpdateUsuarioDTO } from "../features/usuario/usuario.dto.ts";
 import { useAsync } from "./useAsync.ts";
 export const useMiPerfil = () => {
     const {

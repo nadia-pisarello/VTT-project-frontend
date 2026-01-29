@@ -1,6 +1,6 @@
 
 import { PersonajeService } from "./personaje.service";
-import { useAsync } from "../hooks/useAsync";
+import { useAsync } from "../../hooks/useAsync";
 
 export const usePersonaje = (partidaId: number) => {
     const {

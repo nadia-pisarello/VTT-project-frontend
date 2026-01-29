@@ -1,11 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AuthService } from "./auth.service";
 import type { LoginDTO, UsuarioResponseDTO } from "../usuario/usuario.dto";
 import { AuthContext } from "./authContext";
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [usuario, setUsuario] = useState<UsuarioResponseDTO | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const perfil = await AuthService.getPerfil();
+        setUsuario(perfil);
+      } catch {
+        localStorage.removeItem("token");
+        setUsuario(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadUser();
+  }, []);
 
   const login = async (data: LoginDTO) => {
     setLoading(true);

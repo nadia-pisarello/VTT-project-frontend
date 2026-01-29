@@ -1,8 +1,7 @@
-import type { JSX } from "react";
 import { useAuth } from "../features/auth/useAuth";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+export const ProtectedRoute = () => {
   const { isAuthenticated, loading } = useAuth();
   if (loading) {
     return null;
@@ -10,5 +9,5 @@ export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
-  return children;
+  return <Outlet />;
 };
