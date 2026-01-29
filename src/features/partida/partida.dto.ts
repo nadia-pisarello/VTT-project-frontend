@@ -1,4 +1,4 @@
-import type { UsuarioResponseDTO } from "../usuario/usuario.dto";
+import type { UsuarioResponseDTO } from "../../features/usuario/usuario.dto";
 
 export interface CreatePartidaDTO {
     nombre: string;

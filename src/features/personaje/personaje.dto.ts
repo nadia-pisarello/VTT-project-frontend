@@ -1,6 +1,7 @@
-import type { AlineamientoEnum } from "../enums/alineamiento";
-import type { ClaseEnum } from "../enums/clase";
-import type { HabilidadEnum } from "../enums/habilidad";
+import type { AlineamientoEnum } from "./enums/alineamiento";
+import type { ClaseEnum } from "./enums/clase";
+import type { HabilidadEnum } from "./enums/habilidad";
+
 
 export interface Personaje {
     id?: number;

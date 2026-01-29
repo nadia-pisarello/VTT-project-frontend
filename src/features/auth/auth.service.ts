@@ -1,5 +1,5 @@
 import type { CreateUsuarioDTO, LoginDTO, LoginResponseDTO, UsuarioResponseDTO } from "../usuario/usuario.dto";
-import { api } from "../services/httpClient";
+import { api } from "../../services/httpClient";
 
 
 export const AuthService = {

@@ -1,4 +1,4 @@
-import { api } from "../services/httpClient";
+import { api } from "../../services/httpClient";
 import type { PartidaResponseDTO, CreatePartidaDTO, UpdatePartidaDto, MisPartidasResponseDTO } from "./partida.dto";
 
 export const PartidaService = {

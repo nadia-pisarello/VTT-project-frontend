@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { AuthService } from "../auth/auth.service";
-import { useAuth } from "../auth/useAuth";
+import { AuthService } from "../features/auth/auth.service";
+import { useAuth } from "../features/auth/useAuth";
 
 export function Registro() {
   const navigate = useNavigate();
