@@ -11,7 +11,7 @@ export interface UpdateUsuarioDTO {
 }
 
 export interface UsuarioResponseDTO {
-    id: string;
+    id: number;
     nombre: string;
     email: string;
 }

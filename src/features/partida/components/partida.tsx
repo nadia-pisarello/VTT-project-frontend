@@ -4,7 +4,7 @@ import type {
   MisPartidasResponseDTO,
   PartidaResponseDTO,
 } from "../partida.dto";
-import { PartidaService } from "../partida.service";
+import { PartidaService } from "../services/partida.service";
 import { ListaPartidas } from "./listarPartidas";
 
 export function Partidas() {
