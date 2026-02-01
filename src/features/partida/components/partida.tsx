@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useAsync } from "../../../hooks/useAsync";
-import {
-  type MisPartidasResponseDTO,
-  type PartidaResponseDTO,
+import type {
+  MisPartidasResponseDTO,
+  PartidaResponseDTO,
 } from "../partida.dto";
 import { PartidaService } from "../partida.service";
 import { ListaPartidas } from "./listarPartidas";
@@ -48,9 +48,25 @@ export function Partidas() {
         onChange={(e) => setNombre(e.target.value)}
         placeholder="Nombre de la partida"
       />
-      <button onClick={handletCrearPartida} disabled={!nombre.trim()}>
-        Crear partida
-      </button>
+      <Boton onClick={handletCrearPartida} disabled={!nombre.trim()}>
+        Crear Partida
+      </Boton>
     </section>
+  );
+}
+
+function Boton({
+  onClick,
+  disabled,
+  children,
+}: {
+  onClick: () => void;
+  disabled: boolean;
+  children?: React.ReactNode;
+}) {
+  return (
+    <button onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
   );
 }
