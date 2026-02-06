@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js"
 import { useEffect } from "react"
-import { GridLayer } from "../layers/GridLayer";
-import { Camera } from "../engine/camera";
+import { createCamera } from "../helpers/createCamera";
+import { createGrid } from "../helpers/createGrid";
 
 export function useGridAndCamera(
     app: PIXI.Application | null,
@@ -10,18 +10,12 @@ export function useGridAndCamera(
 
     useEffect(() => {
         if (!app) return;
-        const camera = new Camera();
-        const gridLayer = new GridLayer({ cellSize: 50, worldWidth, worldHeight });
+        if (!app.canvas) return;
+        const canvas = app.canvas;
+        const camera = createCamera(app, worldWidth, worldHeight);
+        const gridLayer = createGrid(camera, { cellSize: 50, worldWidth, worldHeight });
         camera.view.addChild(gridLayer.view);
         app.stage.addChild(camera.view)
-
-        const zoomX = app.screen.width / worldWidth;
-        const zoomY = app.screen.height / worldHeight;
-        camera.setZoom(Math.min(zoomX, zoomY));
-        camera.view.position.set(
-            app.screen.width / 2 - (worldWidth * camera.view.scale.x) / 2,
-            app.screen.height / 2 - (worldHeight * camera.view.scale.y) / 2
-        );
 
         const onWheel = (e: WheelEvent) => {
             e.preventDefault();
@@ -29,10 +23,12 @@ export function useGridAndCamera(
             camera.zoomBy(zoomDelta);
         };
 
-        app.canvas.addEventListener("wheel", onWheel);
+        canvas.addEventListener("wheel", onWheel);
         return () => {
-            app.canvas.removeEventListener("wheel", onWheel);
+
+            canvas.removeEventListener("wheel", onWheel);
             gridLayer.destroy();
+            camera.view.destroy({ children: true });
         };
     }, [app, worldWidth, worldHeight]);
 }
