@@ -2,7 +2,6 @@ import type { AlineamientoEnum } from "./enums/alineamiento";
 import type { ClaseEnum } from "./enums/clase";
 import type { HabilidadEnum } from "./enums/habilidad";
 
-
 export interface Personaje {
     id?: number;
     nombre: string;
@@ -14,6 +13,10 @@ export interface Personaje {
     experiencia: number;
     puntosVida: number;
     equipo: { nombre: string; cantidad: number }[];
+}
+
+export interface PersonajeResponseDTO {
+    personajes: Personaje[];
 }
 
 export interface CreatePersonajeDTO {

@@ -6,6 +6,7 @@ import type {
 } from "../partida.dto";
 import { PartidaService } from "../services/partida.service";
 import { ListaPartidas } from "./listarPartidas";
+import { Boton } from "../../../components/boton";
 
 export function Partidas() {
   const {
@@ -52,21 +53,5 @@ export function Partidas() {
         Crear Partida
       </Boton>
     </section>
-  );
-}
-
-function Boton({
-  onClick,
-  disabled,
-  children,
-}: {
-  onClick: () => void;
-  disabled: boolean;
-  children?: React.ReactNode;
-}) {
-  return (
-    <button onClick={onClick} disabled={disabled}>
-      {children}
-    </button>
   );
 }

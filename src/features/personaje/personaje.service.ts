@@ -6,8 +6,9 @@ export const PersonajeService = {
         const response = await api.post<CreatePersonajeDTO>(`/personaje/partida/${partidaId}`, dto);
         return response.data;
     },
-    async getPersonajeDePartida(partidaId: number): Promise<Personaje[]> {
+    getPersonajesDePartida: async (partidaId: number): Promise<Personaje[]> => {
         const response = await api.get<Personaje[]>(`/personaje/partida/${partidaId}/mis-personajes`);
         return response.data;
     },
+
 };

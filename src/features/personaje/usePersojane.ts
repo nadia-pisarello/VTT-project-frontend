@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 export const usePersonaje = (partidaId: number) => {
     const fetchPersonajes = useCallback(
-        () => PersonajeService.getPersonajeDePartida(partidaId),
+        () => PersonajeService.getPersonajesDePartida(partidaId),
         [partidaId]
     );
     const {
