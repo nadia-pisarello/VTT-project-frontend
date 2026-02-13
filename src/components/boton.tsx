@@ -1,15 +1,7 @@
-export function Boton({
-  onClick,
-  disabled,
-  children,
-}: {
-  onClick: () => void;
-  disabled: boolean;
-  children?: React.ReactNode;
-}) {
-  return (
-    <button onClick={onClick} disabled={disabled}>
-      {children}
-    </button>
-  );
+import type { ButtonHTMLAttributes } from "react";
+
+type BotonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Boton({ children, ...props }: BotonProps) {
+  return <button {...props}>{children}</button>;
 }
